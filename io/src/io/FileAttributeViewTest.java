@@ -24,7 +24,7 @@ public class FileAttributeViewTest {
 
 		Path path = Paths.get(filePath);
 
-		//读取文件的属性---修改前
+		System.out.println("-----------------------读取修改前的文件属性---------------------");
 		try {
 			BasicFileAttributes fileAttributes = Files.readAttributes(path, BasicFileAttributes.class);
 			System.out.println("文件创建时间： "+fileAttributes.creationTime());
