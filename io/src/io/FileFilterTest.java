@@ -1,7 +1,6 @@
 package io;
 
 import java.io.File;
-import java.io.FileFilter;
 
 /**
  * https://www.cnblogs.com/demingblog/p/6051834.html
@@ -17,18 +16,10 @@ import java.io.FileFilter;
 public class FileFilterTest {
     //以lambda表达式实现文件过滤
     public static void main(String[] args) {
-        File file = new File("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file");
+        File fileDir = new File("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file");
 
-        FileFilter fileFilter=new FileFilter() {
-            @Override
-            public boolean accept(File pathname) {
-                if (!pathname.isDirectory()&&pathname.getName().endsWith(".txt")){
-                    return true;
-                }
-                return false;
-            }
-        };
-        File[] files = file.listFiles(fileFilter);
+        File[] files = fileDir.listFiles((f) -> !f.isDirectory() && f.getName().endsWith(".txt"));
+
         for (File file1 : files) {
             System.out.println(file1.getName());
         }
