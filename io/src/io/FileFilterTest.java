@@ -1,6 +1,10 @@
 package io;
 
+import java.io.File;
+import java.io.FileFilter;
+
 /**
+ * https://www.cnblogs.com/demingblog/p/6051834.html
  * @author bill-smith liuwb
  * @Package io
  * @Date 2019/10/5 15:47
@@ -12,4 +16,23 @@ package io;
  */
 public class FileFilterTest {
     //以lambda表达式实现文件过滤
+    public static void main(String[] args) {
+        File file = new File("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file");
+
+        FileFilter fileFilter=new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                if (!pathname.isDirectory()&&pathname.getName().endsWith(".txt")){
+                    return true;
+                }
+                return false;
+            }
+        };
+        File[] files = file.listFiles(fileFilter);
+        for (File file1 : files) {
+            System.out.println(file1.getName());
+        }
+
+
+    }
 }
