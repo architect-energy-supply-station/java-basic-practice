@@ -1,5 +1,8 @@
 package io;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,17 +20,25 @@ import java.nio.file.Paths;
  */
 public class OutputAndWriter {
 	//    通过复制本类的内容创建一个同名的同内容的txt文件
-	public static void main(String[] args) {
-		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/";
-		Path sourcePath= Paths.get(filePath+"filetest.txt");
-		Path targetPath= Paths.get(filePath+"source/"+"filetest.txt");
+	public static void main(String[] args) throws IOException {
+		String inPutPath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/io/OutputAndWriter.java";
+		String outPutPath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/target/OutputAndWriter.txt";
 
-		try {
-			if (!Files.exists(targetPath)) {
-				System.out.println("目标文件的路径: "+Files.copy(sourcePath, targetPath));
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
+		File file1 = new File(outPutPath);
+		if (!file1.exists()) {
+			file1.createNewFile();
 		}
+
+		FileInputStream fileInputStream = new FileInputStream(inPutPath);
+		FileOutputStream fileOutputStream = new FileOutputStream(outPutPath);
+
+		byte[] bytes = new byte[32];
+		int hasRead=0;
+		while ((hasRead = fileInputStream.read(bytes)) > 0) {
+			fileOutputStream.write(bytes,0,hasRead);
+		}
+		fileInputStream.close();
+		fileOutputStream.close();
+
 	}
 }
