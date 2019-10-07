@@ -1,11 +1,8 @@
 package io;
 
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
+import java.util.Scanner;
 
 /**
  * @author bill-smith liuwb
@@ -18,18 +15,20 @@ import java.util.List;
  * @Blog https://blog.csdn.net/t131452n?viewmode=contents
  */
 public class InputAndReaderTest {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		//读取本类文件中的内容，并进行打印
-		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/";
+		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/io/InputAndReaderTest.java";
+		FileInputStream fileInputStream = new FileInputStream(filePath);
 
-		Path path = Paths.get(filePath + "sunshine.txt");
-		try {
-			String s = Files.readAllLines(path).toString();
-			PrintWriter printWriter = new PrintWriter(s);
-			printWriter.print(s);
-		} catch (IOException e) {
-			e.printStackTrace();
+		System.setIn(fileInputStream);
+		Scanner scanner = new Scanner(System.in);
+		scanner.useDelimiter("\n");
+
+		while (scanner.hasNext()) {
+			System.out.println(scanner.next());
 		}
+
+		fileInputStream.close();
 	}
 
 }
