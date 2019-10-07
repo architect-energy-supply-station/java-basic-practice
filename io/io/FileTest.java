@@ -37,7 +37,7 @@ public class FileTest {
 		//在当前路径创建临时文件
 
 		File tempFile = File.createTempFile("sun", ".word", new File(filePath));
-		System.out.println("在当前路径创建临时文件： " + tempFile.getName());
+		System.out.println("在当前路径创建临时文件： " + tempFile.getParent()+"    "+tempFile.getName());
 
 
 		//当jvm退出时，自动删除该文件
