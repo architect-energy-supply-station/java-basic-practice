@@ -18,7 +18,7 @@ import java.nio.file.*;
 public class InsertContentTest {
 
 	public static void main(String[] args) {
-		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/";
+		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/";
 		Path path = Paths.get(filePath + "test.txt");
 
 		//向指定的文件，指定位置，插入指定内容

@@ -19,7 +19,7 @@ import static java.nio.file.StandardWatchEventKinds.*;
 public class WatchServiceTest {
 	public static void main(String[] args) {
 		//在当前路径位置上，建立一个文件
-		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/";
+		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/";
 
 		File file = new File(filePath + "watchFile");
 		file.mkdir();

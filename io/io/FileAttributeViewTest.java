@@ -20,7 +20,7 @@ import java.nio.file.attribute.FileTime;
 public class FileAttributeViewTest {
 	//指定自己某个路径上的任意一个文件，读取并且修改其中的属性（创建时间，创建人，，，，，）
 	public static void main(String[] args) {
-		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/sunshine.txt";
+		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/sunshine.txt";
 
 		Path path = Paths.get(filePath);
 

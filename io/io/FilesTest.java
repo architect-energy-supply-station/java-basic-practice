@@ -24,7 +24,7 @@ import static java.nio.file.DirectoryStream.*;
 public class FilesTest {
 	//将整个(Files)工具类的方法都操作一遍，自己设计需求
 	public static void main(String[] args) throws IOException {
-		String pathCopy = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/";
+		String pathCopy = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/";
 
 		//首先创建所有不存在的父目录来创建目录
 		Path path = Paths.get(pathCopy+"directoriesFiles");
@@ -228,8 +228,8 @@ public class FilesTest {
 		}
 		//将文件移动或重命名为目标文件
 		try {
-			if (Files.exists(Paths.get("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/test.txt"))) {
-				Files.move(Paths.get("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/test.txt"), Paths.get("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/directoriesFiles/test.txt"));
+			if (Files.exists(Paths.get("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/test.txt"))) {
+				Files.move(Paths.get("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/test.txt"), Paths.get("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/directoriesFiles/test.txt"));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -437,7 +437,7 @@ public class FilesTest {
 
 
 		try {
-			FileOutputStream fos = new FileOutputStream("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/outputFile.txt");
+			FileOutputStream fos = new FileOutputStream("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/outputFile.txt");
 			OutputStreamWriter osw=new OutputStreamWriter(fos,"UTF-8");
 			osw.write("你好");
 			osw.close();
@@ -450,12 +450,12 @@ public class FilesTest {
 		}
 
 		try {
-			Files.write(Paths.get("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/outputFile.txt"), lines,Charset.forName("UTF-8"), StandardOpenOption.APPEND);//传入枚举对象，打开追加开关
+			Files.write(Paths.get("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/outputFile.txt"), lines,Charset.forName("UTF-8"), StandardOpenOption.APPEND);//传入枚举对象，打开追加开关
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		FileInputStream inputStream1 = new FileInputStream("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/outputFile.txt");
+		FileInputStream inputStream1 = new FileInputStream("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/outputFile.txt");
 		InputStreamReader inputStreamReader = new InputStreamReader(inputStream1, "ISO-8859-1");
 		BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 		System.out.println("输出: "+bufferedReader.readLine());

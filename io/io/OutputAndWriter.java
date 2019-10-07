@@ -18,7 +18,7 @@ import java.nio.file.Paths;
 public class OutputAndWriter {
 	//    通过复制本类的内容创建一个同名的同内容的txt文件
 	public static void main(String[] args) {
-		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/";
+		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/";
 		Path sourcePath= Paths.get(filePath+"filetest.txt");
 		Path targetPath= Paths.get(filePath+"source/"+"filetest.txt");
 

@@ -20,7 +20,7 @@ import java.util.List;
 public class InputAndReaderTest {
 	public static void main(String[] args) {
 		//读取本类文件中的内容，并进行打印
-		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/";
+		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/";
 
 		Path path = Paths.get(filePath + "sunshine.txt");
 		try {

@@ -16,7 +16,7 @@ import java.io.IOException;
 public class FileTest {
 	public static void main(String[] args) {
 
-		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/";
+		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/";
 		//以当前路径创建一个file对象
 		File file = new File(filePath + "test.txt");
 		try {

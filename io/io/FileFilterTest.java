@@ -16,7 +16,7 @@ import java.io.File;
 public class FileFilterTest {
     //以lambda表达式实现文件过滤
     public static void main(String[] args) {
-        File fileDir = new File("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file");
+        File fileDir = new File("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file");
 
         File[] files = fileDir.listFiles((f) -> !f.isDirectory() && f.getName().endsWith(".txt"));
 
