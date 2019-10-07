@@ -1,10 +1,15 @@
 package io;
 
 import java.io.*;
+import java.nio.channels.SeekableByteChannel;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.nio.file.attribute.*;
 import java.util.*;
+import java.util.stream.Stream;
+
+import static java.nio.file.DirectoryStream.*;
 
 /**
  * @author bill-smith liuwb
@@ -433,9 +438,9 @@ public class FilesTest {
 
 		try {
 			FileOutputStream fos = new FileOutputStream("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/src/file/outputFile.txt");
-		 OutputStreamWriter osw=new OutputStreamWriter(fos,"UTF-8");
-		 osw.write("你好");
-		 osw.close();
+			OutputStreamWriter osw=new OutputStreamWriter(fos,"UTF-8");
+			osw.write("你好");
+			osw.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
