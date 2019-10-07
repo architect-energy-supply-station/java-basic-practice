@@ -1,5 +1,7 @@
 package io;
 
+import java.io.File;
+
 /**
  * @author bill-smith liuwb
  * @Package io
@@ -12,7 +14,9 @@ package io;
  */
 public class InsertContentTest {
 //    向指定的文件，指定位置，插入指定内容
+File file = new File("io/src/io");
 //    向指定的文件，指定位置，替换内容（要求中文输入）,实现乱码效果
+
 
 }
 

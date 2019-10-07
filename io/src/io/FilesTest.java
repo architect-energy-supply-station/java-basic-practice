@@ -1,4 +1,7 @@
-package io;
+package io.src.io;
+
+import java.io.*;
+import java.nio.file.*;
 
 /**
  * @author bill-smith liuwb
@@ -12,4 +15,27 @@ package io;
  */
 public class FilesTest {
 //    将整个工具类的方法都操作一遍，自己设计需求
+public static void main(String[] args) throws IOException {
+
+    File fileSource = new File("/io/src/io/test.java");
+//
+//    File fileTatget = new File("io/src");
+//    try {
+//        Path copy = Files.copy(Paths.get(fileSource.getPath()), Paths.get(fileTatget.getPath()), LinkOption.NOFOLLOW_LINKS);
+//        System.out.println(copy);
+//    } catch (IOException e) {
+//        e.printStackTrace();
+//    }
+
+    FileInputStream fileInputStream = new FileInputStream(fileSource);
+
+    String pathT = "/Users/cookr/cookFile/WorkSpace/java-basic-practice/io/src/io/TestTWO.java";
+    String pathO = "/Users/cookr/cookFile/WorkSpace/java-basic-practice/io/src/io/Test.java";
+    Path pathTwo = Paths.get(pathT);
+    Path pathOne = Paths.get(pathO);
+
+    Files.copy(pathOne, pathTwo);
+
+
+}
 }

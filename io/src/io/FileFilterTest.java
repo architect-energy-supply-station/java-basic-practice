@@ -1,4 +1,8 @@
-package io;
+package io.src.io;
+
+import java.io.File;
+import java.io.FileFilter;
+import java.util.Arrays;
 
 /**
  * @author bill-smith liuwb
@@ -10,6 +14,22 @@ package io;
  * @Contract https://github.com/BillCindy
  * @Blog https://blog.csdn.net/t131452n?viewmode=contents
  */
-public class FileFilterTest {
+public class FileFilterTest   {
     //以lambda表达式实现文件过滤
+
+    public static void main(String[] args) {
+
+
+        File file = new File("io/src/io");
+        String s = "FilesTest.java";
+        File[] javas = file.listFiles((f) -> !f.isDirectory() && f.getName().endsWith("java"));
+
+        for (File java : javas) {
+            System.out.println(java);
+        }
+
+
+    }
+
+
 }
