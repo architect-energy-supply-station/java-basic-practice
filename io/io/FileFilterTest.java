@@ -16,12 +16,12 @@ import java.io.File;
 public class FileFilterTest {
     //以lambda表达式实现文件过滤
     public static void main(String[] args) {
-        File fileDir = new File("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file");
+        File fileFilter = new File("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file");
 
-        File[] files = fileDir.listFiles((f) -> !f.isDirectory() && f.getName().endsWith(".txt"));
+        File[] files = fileFilter.listFiles((f) -> !f.isDirectory() && f.getName().endsWith(".txt"));
 
         for (File file1 : files) {
-            System.out.println(file1.getName());
+            System.out.println("过滤后文件的名称： "+file1.getName());
         }
 
 
