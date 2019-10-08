@@ -22,22 +22,16 @@ public class InsertContentTest {
 		String filePath = "/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/test.txt";
 
 		//向指定的文件，指定位置，插入指定内容
-		//String context = "我今天好开心啊";
-		//RandomAccessFile randomAccessFile = new RandomAccessFile(filePath,"rw");
-		//randomAccessFile.seek(20);
-		//randomAccessFile.write(("追加的内容是："+context).getBytes());
-		//
-		//
-		//
-		//
-		////向指定的文件，指定位置，替换内容（要求中文输入）,实现乱码效果
-		//FileOutputStream fos = new FileOutputStream("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/outputFile1.txt");
-		//OutputStreamWriter osw=new OutputStreamWriter(fos,"UTF-8");
-		//osw.write("你好啊今天分享了敲代码的思路和过程");
-		//osw.close();
+		String context = "我今天好开心啊";
+		RandomAccessFile randomAccessFile = new RandomAccessFile(filePath,"rw");
+		randomAccessFile.seek(20);
+		randomAccessFile.write(("追加的内容是："+context).getBytes());
 
 
-		File temp = new File(filePath);
+
+
+		//向指定的文件，指定位置，替换内容（要求中文输入）,实现乱码效果---编程思想
+		File temp = File.createTempFile("sun",null);
 		temp.deleteOnExit();
 
 		RandomAccessFile randomAccessFile1 = new RandomAccessFile(filePath, "rw");
@@ -64,7 +58,6 @@ public class InsertContentTest {
 		while ((hasRead = temIn.read(bbuf)) > 0) {
 			randomAccessFile1.write(bbuf, 0, hasRead);
 		}
-
 	}
 
 }
