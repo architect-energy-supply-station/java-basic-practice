@@ -31,6 +31,11 @@ public class InsertContentTest {
 
 
 		//向指定的文件，指定位置，替换内容（要求中文输入）,实现乱码效果---编程思想
+		//FileOutputStream fos = new FileOutputStream("/Users/sunshinezhang/Documents/Team3/code/java-basic-practice/io/file/outputFile1.txt");
+		//OutputStreamWriter osw=new OutputStreamWriter(fos,"UTF-8");
+		//osw.write("你好啊今天分享了敲代码的思路和过程");
+		//osw.close();
+
 		File temp = File.createTempFile("sun",null);
 		temp.deleteOnExit();
 
