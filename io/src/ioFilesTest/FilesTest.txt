@@ -1,0 +1,65 @@
+非常开心，已经完成了很多了。
+
+
+package io.src.io;
+
+import java.io.*;
+import java.nio.file.*;
+import java.nio.file.attribute.FileAttribute;
+import java.util.Set;
+
+/**
+ * @author bill-smith liuwb
+ * @Package io
+ * @Date 2019/10/5 16:07
+ * @Version v1.0
+ * @Copyright @ 2019-2020用友网络科技股份有限公司
+ * @Email 18232480449@163.com
+ * @Contract https://github.com/BillCindy
+ * @Blog https://blog.csdn.net/t131452n?viewmode=contents
+ */
+public class FilesTest {
+//    将整个工具类的方法都操作一遍，自己设计需求
+public static void main(String[] args) throws IOException {
+
+
+    String nameOne="/Users/cookr/cookFile/WorkSpace/java-basic-practice/io/src/io";
+    Path path3 = Paths.get(nameOne);
+    Path pathOne = Paths.get(nameOne+"FilesTest");
+    System.out.println("pathOne路径：" + pathOne);
+    if (!Files.exists(pathOne)) {
+        System.out.println("首先创建所有不存在的父目录来创建目录。" + Files.createDirectories(pathOne));
+    }
+
+    Path pathTwo = Paths.get(nameOne + "Test");
+    System.out.println("pathTwo路径" + pathTwo);
+    if (!Files.exists(pathTwo)) {
+        System.out.println("创建一个新的目录" + Files.createDirectory(pathTwo));
+    }
+
+
+    Path path1 = Paths.get(pathOne + "/FilesTest.txt");
+    if (!Files.exists(path1)) {
+        System.out.println("创建一个新的和空的文件" + Files.createFile(path1));
+    }
+//    Files.createDirectory(pathOne, )
+    Path path2 = Paths.get(pathTwo  +"/FilesTest.txt");
+
+//    Path file = Files.createFile(path2);
+    if (!Files.exists(path2)) {
+        System.out.println("为现有文件创建新的链接（目录条目） （可选操作）" + Files.createLink( path2,Paths.get(nameOne+"/FilesTest.java")));
+
+    }
+}
+}
+
+
+
+还要继续加油！
+
+++++++++++++from java2s.com+++++++++++++++++
+将文件写这段字节第一
+第二
+第三
+第四
+第五
