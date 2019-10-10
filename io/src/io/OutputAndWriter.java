@@ -1,12 +1,10 @@
 package io.src.io;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-
-import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 /**
  * @author bill-smith liuwb
@@ -23,16 +21,7 @@ public class OutputAndWriter {
 public static void main(String args[]) throws IOException {
 
     String pathT = "/Users/cookr/cookFile/WorkSpace/java-basic-practice/io/src/io";
-    String pathO = "/Users/cookr/cookFile/WorkSpace/java-basic-practice/io/src";
-    Path pathTwo = Paths.get(pathT);
-    Path pathOne = Paths.get(pathO);
-//复制文件到目标文件
-//    Files.copy(pathOne, pathTwo.resolve(pathOne.getFileName()),REPLACE_EXISTING);
-
-    String pathValue = "/Users/cookr/cookFile/WorkSpace/java-basic-practice/io/src/io/test.java";
-    Path pathva = Paths.get(pathValue);
-    Object attribute = Files.getAttribute(pathva,"", LinkOption.NOFOLLOW_LINKS);
-    System.out.println(attribute);
+    System.out.println(Files.copy(Paths.get(pathT + "/FileTest.java"), new FileOutputStream(new File(pathT,"/FileTest.txt"))));
 
 }
 
